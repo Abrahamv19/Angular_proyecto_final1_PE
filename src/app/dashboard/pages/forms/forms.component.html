@@ -1,0 +1,80 @@
+<form [formGroup]="userForm">
+    <div class="row">
+        <div class="col-6">
+            <mat-form-field class="w-100">
+                <mat-label>Nombre</mat-label>
+                    <input formControlName="name" matInput>   
+                    <mat-error>
+                        <span *ngIf="nameControl?.hasError('minlength')">
+                            El campo debe tener al menos 2 caracteres
+                        </span>
+                        <span *ngIf="nameControl?.hasError('maxlength')">
+                            El campo debe tener al maximo 15 caracteres
+                        </span>
+                    </mat-error>
+                    <!-- <mat-hint>Agrega tu nombre</mat-hint>    -->
+            </mat-form-field>
+            <!-- <pre>
+                {{nameControl?.errors | json}}
+            </pre> -->
+        </div>
+        <div class="col-6">
+            <mat-form-field class="w-100">
+                <mat-label>Apellido</mat-label>
+                    <input formControlName="lastName" matInput>  
+                    <mat-error>
+                        <span *ngIf="lastNameControl?.hasError('minlength')">
+                            El campo debe tener al menos 2 caracteres
+                        </span>
+                        <span *ngIf="lastNameControl?.hasError('maxlength')">
+                            El campo debe tener al maximo 15 caracteres
+                        </span>
+                    </mat-error>
+                    <!-- <mat-hint>Agrega tu apellido</mat-hint>    -->
+            </mat-form-field>
+        </div>
+        <div class="col-6">
+            <mat-form-field class="w-100">
+                <mat-label>Email</mat-label>
+                    <input formControlName="email" matInput>  
+                    <mat-error>El campo debe contener un email</mat-error> 
+                    <!-- <mat-hint>Debe contener un email</mat-hint>    -->
+            </mat-form-field>
+        </div>
+        <div class="col-6">
+            <mat-form-field class="w-100">
+
+                     <!-- <mat-label>Curso</mat-label>
+                <mat-select disableRipple>
+                  <mat-option value="Angular">Curso Angular</mat-option>
+                  <mat-option value="Vue">Curso Vue</mat-option>
+                  <mat-option value="React">Curso React</mat-option>
+                  <mat-option value="Python">Curso Python</mat-option>
+                </mat-select> -->
+
+                <mat-label>Curso</mat-label>
+                    <input formControlName="course" matInput>  
+                    <mat-error>Agrega un Curso: Angular - Vue - React - Python</mat-error> 
+                    
+            </mat-form-field>
+        </div>
+        <div class="col-6">
+            <mat-form-field class="w-100">
+
+                <!-- <mat-label>Clase</mat-label>
+                <mat-select disableRipple>
+                  <mat-option value="1">Clase 1</mat-option>
+                  <mat-option value="2">Clase 2</mat-option>
+                  <mat-option value="3">Clase 3</mat-option>
+                  <mat-option value="4">Clase 4</mat-option>
+                </mat-select> -->
+
+                <mat-label>Numero de Clase</mat-label>
+                    <input formControlName="classYear" matInput>  
+                    <mat-error>Agrega un numero de clase: 1 - 2 - 3 - 4</mat-error> 
+                      
+            </mat-form-field>
+        </div>
+
+    </div>
+</form>

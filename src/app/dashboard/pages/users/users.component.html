@@ -1,0 +1,12 @@
+<button (click)="openUsersDialog()" mat-flat-button color='accent'>
+    <mat-icon>person_add</mat-icon>
+    Agregar alumno
+</button>
+
+<!-- {{ testUser | fullname: true: 11: 'argumento' }} -->
+
+<app-users-table [dataSource]="users"
+(editUser)="onEditUser($event)"
+(deleteUser)="onDeleteUser($event)">
+</app-users-table>
+
