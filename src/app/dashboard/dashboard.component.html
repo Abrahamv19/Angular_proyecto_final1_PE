@@ -1,37 +1,30 @@
 <!-- CONTENEDOR -->
 <mat-drawer-container class="example-container" autosize>
 
-    <!-- SIDEBAR -->
-    <mat-drawer #drawer class="example-sidenav" mode="side" position="start">
-      <p>Auto-resizing sidenav</p>
-      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-      <button (click)="showFiller = !showFiller" mat-stroked-button color="warn">
-        Toggle extra text
-      </button>
-    </mat-drawer>
-    <!-- SIDEBAR -->
+  <!-- SiDEBAR -->
+  <mat-drawer 
+  style="width: 200px"
+  [opened]="showSidebar"
+  #drawer
+  class="example-sidenav" 
+  mode="side" 
+  position="start"
+  >
+   <app-sidebar></app-sidebar> 
 
+  </mat-drawer>
+  <!-- SiDEBAR -->
+  
     <!-- CONTENIDO -->
     <div class="example-sidenav-content">
 
-      <!-- TOOLBAR -->
-      <mat-toolbar color="primary">
-        <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <span>HACKER ACADEMY</span>
-        <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-          <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-          <mat-icon>share</mat-icon>
-        </button>
-      </mat-toolbar>
-      <!-- TOOLBAR -->
+   <!-- TOOLBAR -->
+   <app-toolbar (toggleSidebar)="showSidebar = !showSidebar"></app-toolbar>
+   <!-- TOOLBAR -->
 
         <!-- PAGINA FORM -->
         <main style="padding: 1rem;">
+          <h1 fontWeight="bolder" appHeadline>Alumnos</h1>
           <!-- <app-forms></app-forms> -->
           <app-users></app-users>
         </main>

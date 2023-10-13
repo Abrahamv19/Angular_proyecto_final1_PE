@@ -10,13 +10,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FullnamePipe } from './pipes/fullname.pipe';
 import { MatTableModule } from '@angular/material/table';
 import { FormErrorsPipe } from './pipes/form-errors.pipe';
+import { HeadlineDirective } from './directives/headline.directive';
 
 
 
 @NgModule({
   declarations: [
     FullnamePipe,
-    FormErrorsPipe
+    FormErrorsPipe,
+    HeadlineDirective
   ],
   imports: [
     CommonModule
@@ -32,6 +34,7 @@ import { FormErrorsPipe } from './pipes/form-errors.pipe';
     FullnamePipe,
     MatTableModule,
     FormErrorsPipe,
+    HeadlineDirective,
     
   ]
 })
